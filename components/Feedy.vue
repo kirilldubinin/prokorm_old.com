@@ -12,11 +12,11 @@
         </div>
       </div>
       <div class="content">
-        <div @click="select('muesli')" class="muesli">Muesli</div>
-        <div @click="select('red')" class="red">Red</div>
-        <div @click="select('green')" class="green">Green</div>
-        <div @click="select('start')" class="start">Start</div>
-        <div @click="select('standard')" class="standart">Standard</div>
+        <div class="muesli">Muesli</div>
+        <div class="red">Red</div>
+        <div class="green">Green</div>
+        <div class="start">Start</div>
+        <div class="standart">Standard</div>
       </div>
   </section>
 </template>

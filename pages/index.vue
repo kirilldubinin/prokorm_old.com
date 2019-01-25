@@ -1,23 +1,12 @@
 <template>
   <el-container>
     <el-header class="header">
-      <el-row type="flex" class="row-bg" justify="center">
-        <el-col :span="6">
-          <div class="header__phone">8 800 550 28 27</div>
-        </el-col>
-        <el-col :span="12">
-          <div class="header__prokorm"><b>PRO</b>КОРМ</div>
-        </el-col>
-        <el-col :span="6">
-          <div class="header__email">sales@prokorm.com</div>
-
-        </el-col>
-      </el-row>
-
+      <Menu/>
     </el-header>
     <el-main class="main">
-      <Menu/>
+
       <Feedy/>
+      <Products/>
       <Composition/>
       <Feeding/>
 
@@ -34,6 +23,7 @@
 
 import Feedy from '../components/Feedy'
 import Menu from '../components/Menu'
+import Products from '../components/Products'
 import Composition from '../components/Composition'
 import Feeding from '../components/Feeding'
 
@@ -41,6 +31,7 @@ export default {
   components: {
     Feedy,
     Menu,
+    Products,
     Composition,
     Feeding
   },
@@ -58,8 +49,20 @@ export default {
 <style lang="scss">
   body,
   html {
-    background: #fbfbfb;
+    background: #f4f7f6;
     font-family: 'Comfortaa', cursive;
+    color: #2f333e;
+  }
+
+  .main {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 6em auto;
+  }
+
+  .feedy {
+    font-family: 'Baloo Bhaijaan', cursive;
+    font-weight: normal;
   }
 
   .section-title {
@@ -68,29 +71,16 @@ export default {
     padding: 1em 0;
     color: #555;
     text-align: center;
+    margin: 2em 0;
   }
   .section-content {
-    padding: 0 2em;
   }
 
   .header {
-    background: #555;
-    color: #fefefe;
-    line-height: 4em;
-    &__prokorm {
-      font-size: 40px;
-      text-align: center;
-    }
-    &__email {
-      text-align: right;
-    }
-  }
-
-  .main {
-    padding: 0;
+    width: 1000px;
+    max-width: 1000px;
     margin: auto;
   }
-
   .muesli {
     background-color: #f98c06;
   }

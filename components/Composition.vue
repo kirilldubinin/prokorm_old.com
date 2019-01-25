@@ -1,71 +1,85 @@
 <template>
   <section class="composition" id="composition">
-    <h2 class="section-title">ПРОДУКТЫ</h2>
+    <h2 class="section-title">ПОКАЗАТЕЛИ</h2>
     <div class="section-content">
-      <el-row  type="flex" class="title-row">
-        <el-col :span="4">
+      <el-row type="flex" class=" composition__title--row" :gutter="0" justify="end">
+        <el-col :span="7">
         </el-col>
-        <el-col :key="feed.name" v-for="feed in feeds" :span="5">
-          <span class="feedy-type" :class="feed.name.toLowerCase()">
+        <el-col :key="feed.name" v-for="feed in feeds" :span="4">
+          <div class="composition__feedy--type" :class="feed.name.toLowerCase()">
             {{feed.name}}
-          </span>
+          </div>
         </el-col>
       </el-row>
-      <el-row type="flex">
+      <el-row type="flex" :gutter="gutter">
         <!-- PROPERTY -->
-        <el-col :span="4">
-          <h4>Тип</h4>
-          <h4 class="composition">Состав</h4>
-          <h4>Показатели</h4>
-          <el-row :key="indicator" v-for="indicator in indicators" type="flex" class="composition-row">
+        <el-col :span="7">
+          <!--h4>Тип</h4-->
+          <!--h4 class="composition">Состав</h4-->
+          <!--h4>Показатели</h4-->
+          <el-row :key="indicator" v-for="indicator in indicators"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{indicator}}
             </el-col>
           </el-row>
           <h4>Макроэлементы</h4>
-          <el-row :key="macronutrient" v-for="macronutrient in macronutrients" type="flex" class="composition-row">
+          <el-row :key="macronutrient" v-for="macronutrient in macronutrients"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{macronutrient}}
             </el-col>
           </el-row>
           <h4>Микроэлементы</h4>
-          <el-row :key="micronutrient" v-for="micronutrient in micronutrients" type="flex" class="composition-row">
+          <el-row :key="micronutrient" v-for="micronutrient in micronutrients"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{micronutrient}}
             </el-col>
           </el-row>
 
           <h4>Витамины</h4>
-          <el-row :key="vitamin" v-for="vitamin in vitamins" type="flex" class="composition-row">
+          <el-row :key="vitamin" v-for="vitamin in vitamins" type="flex" class="composition__row" :gutter="10">
             <el-col :span="24">
               {{vitamin}}
             </el-col>
           </el-row>
         </el-col>
 
-        <el-col :key="feed.name" v-for="feed in feeds" :span="5">
-          <h4 class="weight-normal">{{feed.type}}</h4>
-          <h4 class="composition weight-normal">{{feed.composition}}</h4>
-          <h4>&nbsp;</h4>
-          <el-row :key="index + indicator" v-for="(indicator, index) in feed.indicators" type="flex" class="composition-row">
+        <el-col class="composition__values" :key="feed.name" v-for="feed in feeds" :span="4">
+          <!--h4 class="weight-normal">{{feed.type}}</h4-->
+          <!--h4 class="composition weight-normal">{{feed.composition}}</h4-->
+          <!--h4>&nbsp;</h4-->
+          <el-row :key="index + indicator" v-for="(indicator, index) in feed.indicators"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{indicator}}
             </el-col>
           </el-row>
           <h4>&nbsp;</h4>
-          <el-row :key="index + macronutrient" v-for="(macronutrient, index) in feed.macronutrients" type="flex" class="composition-row">
+          <el-row :key="index + macronutrient" v-for="(macronutrient, index) in feed.macronutrients"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{macronutrient}}
             </el-col>
           </el-row>
           <h4>&nbsp;</h4>
-          <el-row :key="index + micronutrient" v-for="(micronutrient, index) in feed.micronutrients" type="flex" class="composition-row">
+          <el-row :key="index + micronutrient" v-for="(micronutrient, index) in feed.micronutrients"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{micronutrient}}
             </el-col>
           </el-row>
           <h4>&nbsp;</h4>
-          <el-row :key="index + vitamin" v-for="(vitamin, index) in feed.vitamins" type="flex" class="composition-row">
+          <el-row :key="index + vitamin" v-for="(vitamin, index) in feed.vitamins"
+            type="flex"
+            class="composition__row">
             <el-col :span="24">
               {{vitamin}}
             </el-col>
@@ -81,6 +95,7 @@
 export default {
   data() {
     return {
+      gutter: 0,
       indicators:[
         'Сырой протеин',
         'Сырая клетчатка',
@@ -342,24 +357,38 @@ export default {
 <style lang="scss">
 
   .composition {
-    font-size: 11px;
-    color: #333;
-    font-family: 'Comfortaa', cursive;
-    margin-top: 2em;
+    width: 1000px;
+
+    .section-content {
+      font-size: 12px;
+    }
+
+    &__values {
+      text-align: right;
+    }
 
     h4 {
       padding: 1em 0;
+      font-size: 14px;
+      padding-left: 8px;
     }
 
-    .feedy-type {
-      border-radius: 4px;
+    &__title--row {
+      padding: 0em 0 1em 0;
+    }
+
+    &__feedy--type {
+      border-radius: 3px;
       color: #fff;
       text-align: center;
-      font-size: 24px;
-      display: inline-block;
-      width: 140px;
+      font-size: 12px;
+      /* display: inline-block; */
+      /* min-width: 80px; */
       padding: 8px 8px;
-      margin-bottom: 1em;
+      /* margin-bottom: 1em; */
+      opacity: 0.8;
+      margin-right: 8px;
+      margin-left: 2em;
     }
 
     h4.weight-normal {
@@ -371,8 +400,13 @@ export default {
       padding-right: 20px;
     }
 
-    .composition-row {
-      padding: 4px 0;
+    &__row {
+      padding: 6px 8px;
+      &:nth-child(odd) {
+        background: #fefefe;
+      }
+      &:nth-child(even) {
+      }
     }
   }
 </style>
