@@ -73,8 +73,6 @@ export default {
     text-align: center;
     margin: 2em 0;
   }
-  .section-content {
-  }
 
   .header {
     width: 1000px;

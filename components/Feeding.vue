@@ -363,6 +363,138 @@
           </el-col>
         </el-row>
       </div>
+
+      <!-- GREEN Z-->
+      <div class="feeding__schema">
+        <h3>
+          Схема интенсивного выращивания ремонтных телок до 6-месячного возраста на престартере Feedy <span class="green">Green</span>
+          <p class="sub-title">
+            Живая масса при первом осеменении в 13-14 месяцев 360-380 кг.
+          </p>
+          <p class="sub-title">
+            Затраты на выращивание одной ремонтной телки за период (6 месяцев) составляют 20 000 рублей
+          </p>
+          <p class="sub-title">
+            Среднесуточный привес за период выращивания 900-950 грамм
+          </p>
+        </h3>
+        <!-- TOTAL -->
+        <el-row :gutter="gutter" type="flex" class="total-row">
+          <el-col :span="22">
+          </el-col>
+          <el-col :span="2">
+            <div class="total">
+              ИТОГО
+            </div>
+          </el-col>
+        </el-row>
+
+        <!-- LINES -->
+        <el-row :gutter="gutter" type="flex" class="line-row">
+          <el-col :span="4">
+          </el-col>
+          <el-col :key="index + '_' + mark.label" v-for="(mark, index) in feedyGreenZ.days" :span="mark.long">
+            <div class="line">
+            </div>
+          </el-col>
+        </el-row>
+
+        <!-- MILK -->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Молоко<span class="dimension">(литр/сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.milk" :span="mark.long">
+            <div :class="{'milk': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- WATER -->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Вода<span class="dimension">(литр/сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.water" :span="mark.long">
+            <div :class="{'water': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- FEEDY GREEN-->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Feedy Green<span class="dimension">(кг./сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.green" :span="mark.long">
+            <div :class="{'green': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- FEEDY START-->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Feedy Start<span class="dimension">(кг./сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.start" :span="mark.long">
+            <div :class="{'start': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- OWN FEED-->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Размол<span class="dimension">(кг./сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.own" :span="mark.long">
+            <div :class="{'own': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- HAY-->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Сено<span class="dimension">(кг./сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.hay" :span="mark.long">
+            <div :class="{'hay': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- haylage-->
+        <el-row :gutter="gutter" type="flex" class="feed-row">
+          <el-col :span="4">
+            <div class="empty no-mark">
+              Сенаж/Силос<span class="dimension">(кг./сутки)</span>
+            </div>
+          </el-col>
+          <el-col :key="index + mark.label" v-for="(mark, index) in feedyGreenZ.haylage" :span="mark.long">
+            <div :class="{'haylage': mark.label, 'empty': !mark.label}">{{mark.label}}</div>
+          </el-col>
+        </el-row>
+
+        <!-- DAYS -->
+        <el-row :gutter="gutter" type="flex" class="day-row">
+          <el-col :span="4">
+            <div class="empty">День</div>
+          </el-col>
+          <el-col :key="index + '_' + mark.label" v-for="(mark, index) in feedyGreen.days" :span="mark.long">
+            <div class="day">
+              <label>{{mark.label}}</label>
+            </div>
+          </el-col>
+        </el-row>
+      </div>
     </div>
   </section>
 </template>
@@ -591,6 +723,242 @@
               long: 2
             }, {
               label: '290',
+              long: 1
+            }
+          ]
+        },
+        feedyGreenZ: {
+          days: [
+            {
+              label: '1',
+              long: 1
+            },
+            {
+              label: '2',
+              long: 1
+            },
+            {
+              label: '4',
+              long: 1
+            },
+            {
+              label: '8',
+              long: 1
+            },
+            {
+              label: '15',
+              long: 1
+            },
+            {
+              label: '29',
+              long: 1
+            },
+            {
+              label: '36',
+              long: 1
+            },
+            {
+              label: '43',
+              long: 1
+            },
+            {
+              label: '50',
+              long: 1
+            },
+            {
+              label: '57',
+              long: 1
+            },
+            {
+              label: '59',
+              long: 1
+            },
+            {
+              label: '61',
+              long: 1
+            },
+            {
+              label: '64',
+              long: 2
+            },
+            {
+              label: '85',
+              long: 2
+            },
+            {
+              label: '113',
+              long: 2
+            },
+            {
+              label: '141',
+              long: 2
+            },
+            {
+              label: '180',
+              long: 1
+            }
+          ],
+          milk: [
+            {
+              label: '6.0',
+              long: 3
+            }, {
+              label: '7.0',
+              long: 2
+            }, {
+              label: '8.0',
+              long: 4
+            }, {
+              label: '7.0',
+              long: 1
+            }, {
+              label: '6.0',
+              long: 1
+            }, {
+              label: '3.0',
+              long: 1
+            }, {
+              label: '',
+              long: 8
+            }, {
+              label: '450',
+              long: 1
+            }
+          ],
+          water: [
+            {
+              label: '',
+              long: 2
+            }, {
+              label: '3.0',
+              long: 10
+            }, {
+              label: 'вволю',
+              long: 8
+            }, {
+              label: '',
+              long: 1
+            }
+          ],
+          hay: [
+            {
+              label: '',
+              long: 9
+            },
+            {
+              label: '0.1',
+              long: 1
+            },
+            {
+              label: '0.2',
+              long: 2
+            },
+            {
+              label: '0.3',
+              long: 4
+            }, {
+              label: '0.5',
+              long: 4
+            }, {
+              label: '45',
+              long: 1
+            }
+          ],
+          haylage: [
+            {
+              label: '',
+              long: 12
+            },
+            {
+              label: '0.5',
+              long: 2
+            },
+            {
+              label: '2.0 - 3.0',
+              long: 2
+            },
+            {
+              label: '4.0 - 5.0',
+              long: 2
+            }, {
+              label: '6.0 - 8.0',
+              long: 2
+            }, {
+              label: '400',
+              long: 1
+            }
+          ],
+          own: [{
+              label: '',
+              long: 16
+            }, {
+              label: '2.2',
+              long: 2
+            }, {
+              label: '2.0',
+              long: 2
+            }, {
+              label: '117',
+              long: 1
+            }
+          ],
+          green: [{
+            label: '',
+            long: 2
+          }, {
+            label: '0.1',
+            long: 1
+          }, {
+            label: '0.25',
+            long: 1
+          }, {
+            label: '0.4',
+            long: 1
+          }, {
+            label: '0.55',
+            long: 1
+          }, {
+            label: '0.8',
+            long: 1
+          }, {
+            label: '1.2',
+            long: 1
+          }, {
+            label: '1.5',
+            long: 1
+          }, {
+            label: '1.8',
+            long: 2
+          }, {
+            label: '1.2',
+            long: 1
+          }, {
+            label: '',
+            long: 8
+          }, {
+            label: '47',
+            long: 1
+          }],
+          start: [{
+              label: '',
+              long: 11
+            }, {
+              label: '0.8',
+              long: 1
+            }, {
+              label: '2.2',
+              long: 2
+            }, {
+              label: '2.6',
+              long: 2
+            }, {
+              label: '',
+              long: 2
+            }, {
+              label: '',
+              long: 2
+            }, {
+              label: '120',
               long: 1
             }
           ]
@@ -1186,6 +1554,17 @@
       color: #fff;
       padding: 0.5em 0.5em;
       background-color: #409EFF;
+      border-radius: 3px;
+      opacity: 0.8;
+      position: relative;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .own {
+      color: #fff;
+      padding: 0.5em 0.5em;
+      background-color: #f58e2a;
       border-radius: 3px;
       opacity: 0.8;
       position: relative;
