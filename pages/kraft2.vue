@@ -37,7 +37,7 @@
               <p>кормление животных</p>
             </div>
             <div class="sm-feedy">
-              <img src="../static/cow_face_1.svg" />
+              <img src="../static/pig.svg" />
               <span>Feedy</span>
             </div>
             <div class="sm-made">
@@ -47,7 +47,7 @@
           </div>
       </div>
       <div class="circle">
-        <img src="../static/cow_face_1.svg" />
+        <img src="../static/pig-2.svg" />
         <h1 class="feedy">Feedy</h1>
         <p>комбикорм для телят<br/> от 0 до 6 месяцев</p>
       </div>

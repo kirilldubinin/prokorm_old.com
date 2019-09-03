@@ -1,15 +1,23 @@
 <template>
   <section class="product" :id="id">
     <el-row type="flex" :gutter="0"  class="product__item">
-      <el-col :span="3" class="product__item--img">
-        <img :src="img" />
+
+      <el-col :span="8" class="product__item--img">
+        <el-carousel :height="imageHeight || '300px'" :autoplay="false" trigger="click">
+          <el-carousel-item v-for="img in images" :key="img">
+            <img :src="img" />
+          </el-carousel-item>
+        </el-carousel>
       </el-col>
-      <el-col :span="21" class="product__item--content">
+      <el-col :span="16" class="product__item--content">
         <el-row type="flex">
           <el-col :span="10">
             <h3>
               <span class="product__item--type">{{type}}</span>
-              <span class="product__item--name">{{name}}</span>
+              <span class="product__item--name"
+                :style="{backgroundColor: nameBackground}">
+                {{name}}
+              </span>
             </h3>
           </el-col>
           <el-col :span="14" class="product__item--price">
@@ -22,16 +30,15 @@
           <p class="product__item--short">
             {{short}}
           </p>
-          <p class="product__item--full">
-            {{full}}
+          <p class="product__item--full" v-html="full">
+          </p>
+          <p v-if="weight" class="product__item--weight">
+            <b>Вес</b> {{weight}}
           </p>
           <p class="product__item--indicators">
             <b>Показатели в 1 кг: <br/></b>{{indicators}}
           </p>
-          <p class="products__content--composition">
-
-          </p>
-          <p class="products__content--composition">
+          <p class="products__item--composition">
             <b>Состав: <br/></b>{{composition}}
           </p>
         </div>
@@ -42,7 +49,20 @@
 
 <script>
 export default {
-  props: ['id', 'type', 'name', 'price', 'short', 'full', 'composition', 'indicators', 'img'],
+  props: [
+    'id',
+    'type',
+    'name',
+    'nameBackground',
+    'price',
+    'weight',
+    'short',
+    'full',
+    'composition',
+    'indicators',
+    'images',
+    'imageHeight'
+  ],
   data() {
     return {
       navItems: [
@@ -67,13 +87,12 @@ export default {
 
 <style lang="scss">
   .product {
-    padding: 2em 0;
+    padding: 4em 0;
     &__item {
-
-
-
       img {
+        object-fit: cover;
         width: 100%;
+        height: 100%;
       }
 
       &--content {
@@ -160,20 +179,25 @@ export default {
 
       &--description {
         font-size: 12px;
-        line-height: 16px;
+        line-height: 20px;
       }
 
       &--short {
         font-size: 16px;
-        padding: 0.5em 0 1em 0;
+        padding: 1em 0 1em 0;
       }
 
-      &--composition {
+      &--weight {
         font-size: 12px;
-        padding: 0.5em 0;
+        padding-top: 1em;
       }
 
       &--indicators {
+        font-size: 12px;
+        padding: 2em 0;
+      }
+
+      &--composition {
         font-size: 12px;
         padding: 0.5em 0;
       }
