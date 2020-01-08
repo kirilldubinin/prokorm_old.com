@@ -1,10 +1,6 @@
-<template>
+<!--<template>
   <section>
     <div class="list">
-      <!--div class="prokorm">
-        <h2><b>PRO</b>КОРМ</h2>
-        <p>кормление животных</p>
-      </div-->
       <div class="roxx">
         <h2>Feedy</h2>
         <p>гранулированный комбикорм для телят</p>
@@ -268,3 +264,4 @@
   }
 
 </style>
+-->

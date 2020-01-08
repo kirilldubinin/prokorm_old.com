@@ -4,7 +4,7 @@
       <!--div class="prokorm">
         <h2><b>PRO</b>КОРМ</h2>
         <p>кормление животных</p>
-      </div-->
+      </div
       <div class="voerman">
         voerman
         <p>изделия из высокопрочного пластика</p>
@@ -127,7 +127,7 @@
         <h1>ООО "ПРОКОРМ"</h1>
         <p>кормление животных</p>
         <h2>8 800 550 28 27, sales@prokorm.com</h2>
-      </div>
+      </div>-->
     </div>
   </section>
 </template>
