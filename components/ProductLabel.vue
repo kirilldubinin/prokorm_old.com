@@ -1,11 +1,14 @@
 <template>
-  <div class="product-label">
-    <span class="product-label--name">
+  <div type="flex" class="product-label">
+    <div class="product-label--name">
       {{name}}
-    </span>
-    <span class="product-label--type">
+    </div>
+    <div class="product-label--type">
       {{type}}
-    </span>
+    </div>
+    <div class="product-label--description">
+      {{description}}
+    </div>
   </div>
 </template>
 
@@ -16,7 +19,8 @@ export default {
     'name',
     'type',
     'nameBackground',
-    'typeBackground'
+    'typeBackground',
+    'description'
   ],
 }
 </script>
@@ -26,22 +30,28 @@ export default {
   .product-label {
     &--name {
       font-family: 'Baloo Bhaijaan', cursive;
-      font-size: 32px;
-      line-height: 32px;
+      font-size: 26px;
+      line-height: 22px;
       vertical-align: bottom;
-      color: $main-color;
+      color: #4d626f;
+      float: left;
     }
 
     &--type {
       margin-left: 6px;
       background: red;
       text-align: center;
-      border-radius: 4px;
-      padding: 6px 4px;
+      border-radius: 3px;
+      padding: 4px 4px;
       min-width: 60px;
       display: inline-block;
       color: #fff;
       opacity: 0.7;
+      margin: 0 2em 0 0.5em;
+      float: left;
+    }
+    &--description {
+      line-height: 26px;
     }
   }
 </style>
