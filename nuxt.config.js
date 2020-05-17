@@ -19,7 +19,9 @@ module.exports = {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Mallanna|Nixie+One&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Righteous&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Fredoka+One|Gloria+Hallelujah|Montserrat|Righteous&display=swap' }
     ]
   },
 
